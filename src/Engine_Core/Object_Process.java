@@ -1,6 +1,9 @@
 package Engine_Core;
 
-import processing.core.PApplet;
+import java.util.ArrayList;
+
+import Engine_Core.Components.*;
+import processing.core.*;
 
 public abstract class Object_Process extends Process {
 
@@ -18,7 +21,11 @@ public abstract class Object_Process extends Process {
 	public abstract void update();
 	public abstract void render();
 	//check collision
-	//key pressed
-	//key released
+	public void keyPressed(char key, int keyCode) {}
+	public void keyReleased(char key, int keyCode) {}
+	
+	public String ToString() {
+		return this.name;
+	}
 	
 }

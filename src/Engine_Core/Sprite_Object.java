@@ -16,18 +16,30 @@ public abstract class Sprite_Object extends Object_Process {
 	public Sprite_Object(PApplet p, float x, float y) 
 	{
 		super(p);
-		this.transform.position.x = x;
-		this.transform.position.y = y;
+		this.transform.pos.x = x;
+		this.transform.pos.y = y;
 		
 	}
 	
 	public abstract void render();
 	
+	@Override
 	public void update() {
 		for (int i = this.component.size() - 1; 0 <= i; i--) {
-			Component_Process comp = this.components.get(i);
+			Component_Process comp = this.component.get(i);
 			comp.update();
 			comp.render();
 		}
 	}
+	
+	@Override
+	public void start() {
+		//start all components
+		for (int i = this.component.size() - 1; i >= 0; i--) {
+			Component_Process comp = this.component.get(i);
+			comp.start();
+		}
+	}
+  
+	
 }

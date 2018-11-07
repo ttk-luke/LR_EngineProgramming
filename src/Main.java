@@ -1,5 +1,5 @@
 import processing.core.PApplet;
-import simple_platformer.Launcher;
+import Game_Runner.*;
 public class Main extends PApplet {
 
 	public static void main(String[] args) {

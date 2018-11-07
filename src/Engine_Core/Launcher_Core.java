@@ -9,7 +9,7 @@ public class Launcher_Core {
     }
     
     public Manager_Process g_manager;
-    public void StartGame()     {
+    public void GameStart()     {
     	g_manager = new Manager_Process(parent);
     }
     public void UpdateAll() 
@@ -18,11 +18,11 @@ public class Launcher_Core {
     }
     public void keypressed (char key, int keycode) 
     {
-    	g_manager.keypressed (key, keycode);
+    	g_manager.key_Pressed (key, keycode);
     }
     public void keyreleased (char key, int keycode) 
     {
-    	g_manager.keyreleased (key,keycode);
+    	g_manager.key_Released (key,keycode);
     }
     
 }

@@ -7,11 +7,15 @@ import Engine_Core.Transform_Core;
 public abstract class Component_Process extends Process{
 	public Component_Process (Object_Process o) {
 		super(o.parent);
-		this.??? = o;
-		
-		//this.gameObject = g; //components are linked to a gameObject
-		//this.transform = this.gameObject.transform;
-		//this.gameObject.components.add(this);
+		this.game_object = o;
+		this.transform = this.game_object.transform;
+		this.game_object.component.add(this);
 	}
+	
+	public Object_Process game_object;
+	public Transform_Core transform;
+	public abstract void start();
+	public abstract void update();
+	public abstract void render();
 	
 }
